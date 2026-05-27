@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complete Form Validation</title>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let age = document.getElementById("age").value;
+            let gender = document.querySelector('input[name="gender"]:checked');
+            let course = document.getElementById("course").value;
+            let hobbies = document.querySelectorAll('input[name="hobby"]:checked');
+            let message = document.getElementById("message").value;
+			let subjects = document.getElementById("subjects").selectedOptions;
+
+            let valid = true;
+			
+			if (subjects.length === 0) {
+			alert("Select at least one subject");
+			valid= false;
+			}
+			
+			
+let datetime = document.getElementById("datetime").value;
+
+
+
+// DateTime validation
+if (datetime === "") {
+    document.getElementById("dtError").innerHTML = "Select date & time";
+    valid = false;
+} else {
+    document.getElementById("dtError").innerHTML = "";
+}
+
+            // Name validation
+            if (name === ""|| name.length<=5 ) {
+                document.getElementById("nameError").innerHTML = "Name required";
+                valid = false;
+            } else {
+                document.getElementById("nameError").innerHTML = "";
+            }
+
+            // Email validation
+            if (!email.includes("@")) {
+                document.getElementById("emailError").innerHTML = "Invalid email";
+                valid = false;
+            } else {
+                document.getElementById("emailError").innerHTML = "";
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                document.getElementById("passError").innerHTML = "Min 6 characters";
+                valid = false;
+            } else {
+                document.getElementById("passError").innerHTML = "";
+            }
+
+            // Age validation
+            if (age < 18) {
+                document.getElementById("ageError").innerHTML = "Must be 18+";
+                valid = false;
+            } else {
+                document.getElementById("ageError").innerHTML = "";
+            }
+
+            // Gender validation
+            if (!gender) {
+                document.getElementById("genderError").innerHTML = "Select gender";
+                valid = false;
+            } else {
+                document.getElementById("genderError").innerHTML = "";
+            }
+
+            // Dropdown validation
+            if (course === "") {
+                document.getElementById("courseError").innerHTML = "Select course";
+                valid = false;
+            } else {
+                document.getElementById("courseError").innerHTML = "";
+            }
+
+            // Checkbox validation
+            if (hobbies.length === 0) {
+                document.getElementById("hobbyError").innerHTML = "Select at least one";
+                valid = false;
+            } else {
+                document.getElementById("hobbyError").innerHTML = "";
+            }
+
+            // Textarea validation
+            if (message === "") {
+                document.getElementById("msgError").innerHTML = "Enter message";
+                valid = false;
+            } else {
+                document.getElementById("msgError").innerHTML = "";
+            }
+
+            return valid;
+        }
+		
+		
+
+        function changeColor() {
+            document.getElementById("title").style.color = "blue";
+        }
+
+        function focusName() {
+            document.getElementById("name").focus();
+        }
+    </script>
+</head>
+
+<body onload="focusName()">
+
+<h2 id="title" onmouseover="changeColor()">Student Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+    Name:
+    <input type="text" id="name"><br>
+    <span id="nameError" class="error"></span><br>
+
+    Email:
+    <input type="text" id="email"><br>
+    <span id="emailError" class="error"></span><br>
+
+    Password:
+    <input type="password" id="password"><br>
+    <span id="passError" class="error"></span><br>
+
+    Age:
+    <input type="number" id="age"><br>
+    <span id="ageError" class="error"></span><br>
+
+    Gender:
+    <input type="radio" name="gender" value="male">Male
+    <input type="radio" name="gender" value="female">Female<br>
+    <span id="genderError" class="error"></span><br>
+	
+	Appointment:
+<input type="datetime-local" id="datetime"><br>
+<span id="dtError" class="error"></span><br>
+
+    Course:
+    <select id="course">
+        <option value="">Select</option>
+        <option>BCA</option>
+        <option>BTech</option>
+        <option>MCA</option>
+    </select><br>
+    <span id="courseError" class="error"></span><br>
+	
+	
+
+    Hobbies:
+    <input type="checkbox" name="hobby">Reading
+    <input type="checkbox" name="hobby">Sports
+    <input type="checkbox" name="hobby">Music<br>
+    <span id="hobbyError" class="error"></span><br>
+	
+	Favorite Subjects:
+<select id="subjects" multiple size="3">
+    <option>Math</option>
+    <option>Physics</option>
+    <option>Chemistry</option>
+    <option>Computer</option>
+</select><br><br>
+
+    Message:
+    <textarea id="message"></textarea><br>
+    <span id="msgError" class="error"></span><br>
+
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+	
+	
+
+</form>
+
+</body>
+</html>

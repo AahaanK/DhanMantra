@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> FORM VALIDATION</title>
+
+<style>
+body {
+    background: linear-gradient(135deg, #f0f2f5 0%, #c3cfe2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+form {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    border-top: 6px solid #4a90e2;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Layout for labels and inputs */
+form > br {
+    display: none; /* Hide old BR tags for better spacing */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="datetime-local"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box; /* Ensures padding doesn't break width */
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 0.95rem;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.2);
+}
+
+/* Radio & Checkbox Styling */
+.radio-group, .checkbox-group {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* Buttons */
+button {
+    width: 48%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"] {
+    background-color: #4a90e2;
+    color: white;
+    margin-right: 2%;
+}
+
+button[type="submit"]:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+}
+
+button[type="reset"] {
+    background-color: #e2e8f0;
+    color: #4a5568;
+}
+
+button[type="reset"]:hover {
+    background-color: #cbd5e0;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+</style>
+<script>
+
+function validateForm()
+{
+let name=document.getElementById("name").value;
+let email=document.getElementById("email").value;
+let password=document.getElementById("password").value;
+let age=document.getElementById("age").value;
+let course=document.getElementById("course").value;
+let gender=document.querySelector('input[name="gender"]:checked');
+let datetime=document.getElementById("datetime").value;
+let hobbies=document.querySelectorAll('input[name="hobbies"]:checked');
+let subject=document.getElementById("subject").selectedOptions;
+let message=document.getElementById("message").value;
+
+let valid = true;
+
+if(name.length<5){
+alert("Enter a valid name");
+valid=false;
+}
+
+else if(!email.includes("@"))
+{
+alert("Enter a valid email");
+valid=false;
+}
+
+else if(password==="" || password.length<6)
+{
+alert("Enter a valid password");
+valid=false;
+}
+
+else if(age<18 || age>115)
+{
+alert("Enter a valid age");
+valid=false;
+}
+
+else if(!gender)
+{
+alert("Select your gender");
+valid=false;
+}
+
+else if(datetime==="")
+{
+alert("Enter a valid date and time");
+valid=false;
+}
+
+else if(course===""){
+alert("select valid course name");
+valid=false;
+}
+
+else if(hobbies==="")
+{
+alert("Select a valid hobby from the options");
+valid=false;
+}
+
+else if(subject.length===0){
+alert("Select a valid subject");
+valid=false;
+}
+
+else if(message===""){
+alert("Enter a valid message");
+valid=false;
+}
+
+return valid;
+
+}
+
+function focusName()
+{
+document.getElementById("name").focus();
+}
+
+</script>
+</head>
+
+<body onload="focusName()">
+
+
+
+<form onsubmit="return validateForm()">
+
+NAME:
+<input type="text" id="name"><br>
+
+EMAIL:
+<input type="text" id="email"><br>
+
+PASSWORD:
+<input type="password" id="password"><br>
+
+AGE:
+<input type="number" id="age"><br>
+
+GENDER:
+<input type="radio" name="gender" value="male">MALE
+<input type="radio" name="gender" value="female">FEMALE<br>
+
+APPOINTMENT:
+<input type="datetime-local" id="datetime"><br>
+
+COURSE:
+<select id="course">
+<option value="">select</option>
+<option>B-TECH</option>
+<option>BCOM</option>
+<option>B-ARCH</option>
+</select><br>
+
+HOBBIES:
+<input type="checkbox" name="hobbies">Reading
+<input type="checkbox" name="hobbies">Sports
+<input type="checkbox" name="hobbies">Music<br><br>
+
+SUBJECTS:
+<select id="subject" multiple size="3">
+<option>Maths</option>
+<option>Physics</option>
+<option>Chemistry</option>
+</select><br><br>
+
+MESSAGE:
+
+<textarea id="message"></textarea><br>
+
+<button type="submit">SUBMIT</button>
+<button type="reset">RESET</button> 
+</form>
+</body>
+
+</html>

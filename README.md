@@ -1,27 +1,70 @@
-# DhanMantra
-DhanMantra is a beginner-friendly stock market analysis and trading simulation platform built with React and dynamic mock data. It features stock comparison, predictions, investment calculation, portfolio tracking, watchlists, intelligent insights, and risk-free virtual trading in an interactive interface.
+# Getting Started with Create React App
 
-#DhanMantra — Smart Stock Market Analysis & Simulation Platform
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-DhanMantra is a modern stock market web application built to help users learn investing and trading through interactive analysis tools and realistic market simulations. Developed using React and mock-data-driven architecture, the platform combines stock analytics, prediction systems, investment calculators, watchlists, and virtual trading into one seamless experience.
+## Available Scripts
 
-Features
-Stock Analysis: View company details, market cap, P/E ratio, and historical price trends.
-Stock Comparison: Compare two stocks side-by-side using performance metrics and insights.
-Stock Prediction: Predict short-term stock movement with bullish/bearish trend indicators.
-Investment Calculator: Calculate returns, profit/loss, shares bought, and portfolio growth over time.
-Watchlist System: Save and manage favorite stocks for quick access.
-Trading Simulation: Buy and sell stocks virtually, track holdings, portfolio balance, and dynamic profit/loss without real financial risk.
-Dynamic Insights Engine: Generates intelligent learning insights based on portfolio performance, risk exposure, and market movement.
-Mock Data Simulation System: Custom-built stock simulation system using dynamic mock data and historical price progression to create a realistic market experience.
-Tech Stack
-React.js
-JavaScript (ES6+)
-React Router
-CSS
-Mock Data Simulation
+In the project directory, you can run:
 
-Purpose
-DhanMantra was created to simplify stock market learning through clean UI, practical financial concepts, and hands-on simulations. The project focuses on making investing education interactive, engaging, and beginner-friendly while also demonstrating strong frontend logic, state management, and simulation-based system design skills.
+### `npm start`
 
-#Developed by @AahaanK , @saam-07
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+
+### `npm test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
